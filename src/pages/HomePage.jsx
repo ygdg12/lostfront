@@ -11,6 +11,7 @@ export default function HomePage() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [isLoading, setIsLoading] = useState(false)
+  // eslint-disable-next-line no-unused-vars
   const [isSignedIn, setIsSignedIn] = useState(true) // Default to signed in for demo
   const navigate = useNavigate();
 
@@ -21,8 +22,7 @@ export default function HomePage() {
       // For demo purposes, let's assume user is always signed in
       // You can replace this with your actual authentication logic
       const token = localStorage.getItem("authToken");
-      const userIsSignedIn = true; // For demo, always signed in
-      setIsSignedIn(userIsSignedIn);
+      setIsSignedIn(!!token); // Check if token exists
     };
     
     checkAuthStatus();
@@ -491,14 +491,14 @@ export default function HomePage() {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors duration-200">
+                  <button type="button" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="hover:text-white transition-colors duration-200">
                     How It Works
-                  </a>
+                  </button>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors duration-200">
+                  <button type="button" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="hover:text-white transition-colors duration-200">
                     Success Stories
-                  </a>
+                  </button>
                 </li>
               </ul>
             </div>
@@ -506,19 +506,19 @@ export default function HomePage() {
               <h3 className="font-semibold mb-4 text-white">Company</h3>
               <ul className="space-y-2 text-red-200">
                 <li>
-                  <a href="#" className="hover:text-white transition-colors duration-200">
+                  <button type="button" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="hover:text-white transition-colors duration-200">
                     About
-                  </a>
+                  </button>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors duration-200">
+                  <button type="button" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="hover:text-white transition-colors duration-200">
                     Community
-                  </a>
+                  </button>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors duration-200">
+                  <button type="button" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="hover:text-white transition-colors duration-200">
                     News
-                  </a>
+                  </button>
                 </li>
               </ul>
             </div>
@@ -526,19 +526,19 @@ export default function HomePage() {
               <h3 className="font-semibold mb-4 text-white">Support</h3>
               <ul className="space-y-2 text-red-200">
                 <li>
-                  <a href="#" className="hover:text-white transition-colors duration-200">
+                  <button type="button" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="hover:text-white transition-colors duration-200">
                     Help Center
-                  </a>
+                  </button>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors duration-200">
+                  <button type="button" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="hover:text-white transition-colors duration-200">
                     Contact
-                  </a>
+                  </button>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors duration-200">
+                  <button type="button" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="hover:text-white transition-colors duration-200">
                     Privacy
-                  </a>
+                  </button>
                 </li>
               </ul>
             </div>

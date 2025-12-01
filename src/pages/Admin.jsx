@@ -45,6 +45,7 @@ export default function Admin() {
     } else if (view === "claims") {
       fetchClaims()
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [view])
 
   const fetchUsers = async () => {

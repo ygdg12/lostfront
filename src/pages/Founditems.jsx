@@ -102,6 +102,7 @@ export default function FoundItems() {
   useEffect(() => {
     fetchItems()
     fetchUserClaims()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const fetchItems = async () => {
