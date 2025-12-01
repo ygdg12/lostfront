@@ -84,7 +84,7 @@ export default function LostItems() {
     fetchItems()
     fetchUserClaims()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, []) // Only run once on mount
 
   const fetchUserClaims = async () => {
     const token = localStorage.getItem("authToken")

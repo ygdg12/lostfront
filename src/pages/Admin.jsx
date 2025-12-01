@@ -46,7 +46,7 @@ export default function Admin() {
       fetchClaims()
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [view])
+  }, [view]) // fetchClaims, fetchFoundItems, fetchLostItems, fetchUsers are stable functions
 
   const fetchUsers = async () => {
     // Don't set loading if we're on dashboard (to avoid blocking the UI)

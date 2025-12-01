@@ -11,8 +11,8 @@ export default function HomePage() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [isLoading, setIsLoading] = useState(false)
-  // eslint-disable-next-line no-unused-vars
-  const [isSignedIn, setIsSignedIn] = useState(true) // Default to signed in for demo
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
+  const [isSignedIn, setIsSignedIn] = useState(true) // Default to signed in for demo - reserved for future use
   const navigate = useNavigate();
 
   // Check authentication status
@@ -21,11 +21,12 @@ export default function HomePage() {
     const checkAuthStatus = () => {
       // For demo purposes, let's assume user is always signed in
       // You can replace this with your actual authentication logic
-      const token = localStorage.getItem("authToken");
-      setIsSignedIn(!!token); // Check if token exists
+      const hasToken = !!localStorage.getItem("authToken");
+      setIsSignedIn(hasToken);
     };
     
     checkAuthStatus();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -248,18 +249,18 @@ export default function HomePage() {
               </div>
             </div>
             <div className="hidden md:flex items-center space-x-1">
-              <a href="#features" className="px-3 py-2 text-red-100 hover:text-white transition-all duration-300 font-medium rounded-lg hover:bg-white/10 relative group">
+              <button type="button" onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })} className="px-3 py-2 text-red-100 hover:text-white transition-all duration-300 font-medium rounded-lg hover:bg-white/10 relative group">
                 <span className="relative z-10">Features</span>
                 <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-red-300 to-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-              </a>
-              <a href="#about" className="px-3 py-2 text-red-100 hover:text-white transition-all duration-300 font-medium rounded-lg hover:bg-white/10 relative group">
+              </button>
+              <button type="button" onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })} className="px-3 py-2 text-red-100 hover:text-white transition-all duration-300 font-medium rounded-lg hover:bg-white/10 relative group">
                 <span className="relative z-10">About</span>
                 <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-red-300 to-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-              </a>
-              <a href="#contact" className="px-3 py-2 text-red-100 hover:text-white transition-all duration-300 font-medium rounded-lg hover:bg-white/10 relative group">
+              </button>
+              <button type="button" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="px-3 py-2 text-red-100 hover:text-white transition-all duration-300 font-medium rounded-lg hover:bg-white/10 relative group">
                 <span className="relative z-10">Contact</span>
                 <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-red-300 to-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-              </a>
+              </button>
               <div className="ml-3 pl-3 border-l border-red-700">
                 <button 
                   onClick={handleSearch}
@@ -486,9 +487,9 @@ export default function HomePage() {
               <h3 className="font-semibold mb-4 text-white">Product</h3>
               <ul className="space-y-2 text-red-200">
                 <li>
-                  <a href="#features" className="hover:text-white transition-colors duration-200">
+                  <button type="button" onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-white transition-colors duration-200">
                     Features
-                  </a>
+                  </button>
                 </li>
                 <li>
                   <button type="button" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="hover:text-white transition-colors duration-200">
