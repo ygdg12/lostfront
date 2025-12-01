@@ -99,10 +99,10 @@ export default function FoundItems() {
     return () => window.removeEventListener("authChange", updateUser)
   }, [])
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     fetchItems()
     fetchUserClaims()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []) // Only run once on mount
 
   const fetchItems = async () => {

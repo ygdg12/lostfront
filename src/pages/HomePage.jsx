@@ -11,18 +11,15 @@ export default function HomePage() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [isLoading, setIsLoading] = useState(false)
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
-  const [isSignedIn, setIsSignedIn] = useState(true) // Default to signed in for demo - reserved for future use
   const navigate = useNavigate();
 
   // Check authentication status
   useEffect(() => {
-    // In a real app, this would check localStorage, cookies, or an API
+    // Check authentication status from localStorage
     const checkAuthStatus = () => {
-      // For demo purposes, let's assume user is always signed in
-      // You can replace this with your actual authentication logic
       const hasToken = !!localStorage.getItem("authToken");
-      setIsSignedIn(hasToken);
+      // Authentication state is managed via localStorage, no need for separate state
+      return hasToken;
     };
     
     checkAuthStatus();
