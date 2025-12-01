@@ -29,6 +29,7 @@ export default function Admin() {
     }
   }, [navigate])
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     // Fetch dashboard data on mount
     if (view === "dashboard") {
@@ -45,7 +46,6 @@ export default function Admin() {
     } else if (view === "claims") {
       fetchClaims()
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [view]) // fetchClaims, fetchFoundItems, fetchLostItems, fetchUsers are stable functions
 
   const fetchUsers = async () => {
