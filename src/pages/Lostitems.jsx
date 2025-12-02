@@ -6,8 +6,13 @@ import axios from "axios"
 
 // Endpoints
 const API_URL =
-  import.meta?.env?.VITE_LOST_API_URL || process.env.REACT_APP_LOST_API_URL || "http://localhost:5000/api/lost-items"
-const BASE_URL = import.meta?.env?.VITE_BASE_URL || process.env.REACT_APP_BASE_URL || "http://localhost:5000"
+  import.meta?.env?.VITE_LOST_API_URL ||
+  process.env.REACT_APP_LOST_API_URL ||
+  "https://lost-items-backend-q30o.onrender.com/api/lost-items"
+const BASE_URL =
+  import.meta?.env?.VITE_BASE_URL ||
+  process.env.REACT_APP_BASE_URL ||
+  "https://lost-items-backend-q30o.onrender.com"
 const CLAIMS_URL = (import.meta?.env?.VITE_CLAIMS_API_URL || process.env.REACT_APP_CLAIMS_API_URL) || `${BASE_URL}/api/claims`
 
 export default function LostItems() {
