@@ -11,6 +11,7 @@ export default function HomePage() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [isLoading, setIsLoading] = useState(false)
+  const [isSignedIn, setIsSignedIn] = useState(() => !!localStorage.getItem("authToken"))
   const navigate = useNavigate();
 
   // Check authentication status
@@ -18,8 +19,7 @@ export default function HomePage() {
     // Check authentication status from localStorage
     const checkAuthStatus = () => {
       const hasToken = !!localStorage.getItem("authToken");
-      // Authentication state is managed via localStorage, no need for separate state
-      return hasToken;
+      setIsSignedIn(hasToken);
     };
     
     checkAuthStatus();
