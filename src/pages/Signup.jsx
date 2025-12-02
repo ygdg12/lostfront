@@ -18,7 +18,10 @@ import {
   AlertCircle,
 } from "lucide-react"
 
-const BASE_URL = import.meta.env?.VITE_BASE_URL || process.env.REACT_APP_BASE_URL || "http://localhost:5000"
+const BASE_URL =
+  import.meta.env?.VITE_BASE_URL ||
+  process.env.REACT_APP_BASE_URL ||
+  "https://lost-items-backend-q30o.onrender.com"
 
 // Constants for validation
 const VALIDATION_RULES = {
