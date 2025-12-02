@@ -1,5 +1,4 @@
 {
-  "buildCommand": "CI=false npm run build",
   "builds": [
     {
       "src": "package.json",
@@ -9,6 +8,9 @@
       }
     }
   ],
+  "env": {
+    "CI": "false"
+  },
   "rewrites": [
     {
       "source": "/(.*)",

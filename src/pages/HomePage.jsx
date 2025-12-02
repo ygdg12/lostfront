@@ -82,7 +82,6 @@ export default function HomePage() {
       setShowSignInModal(false);
       // Store auth token (in a real app, this would come from an API response)
       localStorage.setItem("authToken", "user-authenticated");
-      setIsSignedIn(true);
       // Navigate to Lostitems after successful sign-in
       navigate("/Lostitems");
     }, 1500);
@@ -111,7 +110,6 @@ export default function HomePage() {
     // Clear authentication
     localStorage.removeItem("authToken");
     localStorage.removeItem("user");
-    setIsSignedIn(false);
     navigate("/signin");
   }
 
